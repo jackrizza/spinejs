@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="/site.webmanifest"> -->
+</head>
+
+<body>
+    <script>0</script>
+    <div id="app">
+
+    </div>
+
+</body>
+<footer>
+    <!-- SPINE.js APP-->
+    <script src="/src/fetch.js"></script>
+    <script src="/src/component.js"></script>
+    <script src="/src/state.js"></script>
+    <script src="/src/route.js"></script>
+    <script src="/src/spine.js"></script>
+
+
+    <!-- CUSTOM SCRIPTS -->
+    <script src="/src/custom/table.js"></script>
+    <script src="/src/custom/nav.js"></script>
+    <script src="/index.js"></script>
+
+    <script type="text/javascript">
+        const state = new State();
+        state.set("current_url_hash", window.location.hash.slice(1) || "home");
+        state.set("interval-id", "[]")
+
+        new BaseSpine().then(spine => {
+            console.log("BaseSpine has loaded")
+            console.log(state);
+            window.addEventListener('hashchange', function () {
+                console.log(state.get("interval-id"))
+                JSON.parse(state.get("interval-id")).forEach(id => {
+                    console.log("Clearing Interval with id : " + id)
+                    clearInterval(id);
+                });
+                state.set("interval-id", "[]");
+                state.set("current_url_hash", window.location.hash.slice(1));
+                spine.active_route = window.location.hash.slice(1);
+                spine.renderRoute();
+                let current = spine.routes.find(route => route.key === spine.active_route);
+                current.tree.onload();
+
+
+            });
+
+            try {
+                spine.renderRoute();
+                let current = spine.routes.find(route => route.key === spine.active_route);
+                current.tree.onload();
+            } catch (error) {
+                document.getElementById("app").appendChild(new Div({
+                    key: "error",
+                    classlist: ["error message"],
+                    children: [
+                        new Ul({
+                            children: [
+                                new Li({ text: error }),
+                                new Li({ text: error.message })
+                            ]
+                        })
+                    ]
+                }).render());
+            }
+
+
+        });
+
+        try {
+            spine.renderRoute();
+            let current = spine.routes.find(route => route.key === spine.active_route);
+            current.tree.onload();
+        } catch (error) {
+            document.getElementById("app").appendChild(new Div({
+                key: "error",
+                classlist: ["error message"],
+                children: [
+                    new Ul({
+                        children: [
+                            new Li({ text: error }),
+                            new Li({ text: error.message })
+                        ]
+                    })
+                ]
+            }).render());
+        }
+
+    </script>
+
+</footer>
+
+</html>

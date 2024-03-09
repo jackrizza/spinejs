@@ -1,0 +1,241 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 16px;
+    padding: 8px;
+}
+
+h1 {
+    margin: 8px;
+}
+
+/* Set a base font size and family */
+body {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(240, 240, 240);
+    ;
+}
+
+.title {
+    color: #000;
+    margin: 16px;
+    padding: 4px 8px;
+}
+
+.titlelink {
+    font-size: 32px !important;
+    color: #000;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.titlelink:hover {
+    border-bottom: 3px solid #fff;
+}
+
+.card {
+    display: inline-block;
+    min-width: 90%;
+    min-height: 400px;
+    background: #fff;
+    margin: 32px;
+    padding: 32px;
+    box-shadow: 32px 32px #000;
+}
+
+/* Create a container for the layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 96px;
+    padding: 20px;
+}
+
+/* Create a header section */
+.header {
+    background-color: #fdfdfd;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Create a navigation menu */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96px;
+    background: #fff;
+    border-bottom: 2px #181818 solid;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 10px 20px;
+    padding: 12px 18px;
+    transition: 0.25s;
+    /* border: 2px solid #fff; */
+}
+
+
+.navbar ul li:hover {
+    /* padding: 4px; */
+    background: #ffa667;
+    /* border-right : 4px solid #000;
+    border-bottom : 4px solid #000; */
+    box-shadow: 16px 16px #000;
+
+}
+
+.navbar ul li:hover a {
+    color: #7c2500;
+    text-decoration: none;
+}
+
+
+.navbar a {
+    font-size: 18px;
+    ;
+    color: #000;
+    text-decoration: none;
+}
+
+
+.message {
+    padding: 8px;
+}
+
+.error {
+    background: #ff8787;
+    border: 2px #8d1919 solid;
+    color: #a50000;
+    box-shadow: 16px 16px #a50000;
+}
+
+.info {
+    background: #87c7ff;
+    border: 2px #1d198d solid;
+    color: #0e00a5;
+    box-shadow: 16px 16px #1600a5;
+}
+
+.succsess {
+    background: #b1ff87;
+    border: 2px #308d19 solid;
+    color: #03a500;
+    box-shadow: 16px 16px #34a500;
+}
+
+.message ul {
+    padding: 8px;
+}
+
+.message ul li {
+    padding: 8px;
+    list-style-type: none;
+}
+
+
+/* Create a main content section */
+.main-content {
+    padding: 20px;
+}
+
+/* Create a footer section */
+.footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Add modern layout styles */
+/* .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+} */
+
+.header {
+    font-size: 24px;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    padding-left: 12px;
+    padding-right: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    justify-content: flex-start;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+    font-size: 14px;
+    color: #999;
+}
+
+table,
+thead,
+tbody,
+tr,
+td,
+th {
+    border: 1px solid #000000;
+    margin: 16px !important;
+    padding: 16px 24px !important;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+thead,
+thead>tr {
+    background-color: #141414 !important;
+    color: #fff !important;
+}

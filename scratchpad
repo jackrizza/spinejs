@@ -1,0 +1,25 @@
+new Table("", classlist = ["table"], text = "", children = [
+                new Thead("", classlist = ["thead"], text = "", children = [
+                    new Tr("", classlist = ["tr"], text = "", children = [
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                    ]),
+                ]), new Tbody("tbody", classlist = ["tbody"], text = "", children = [
+                    new Tr("", classlist = ["tr"], text = "", children = [
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                    ]),
+                    new Tr("", classlist = ["tr"], text = "", children = [
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                    ]),
+                    new Tr("", classlist = ["tr"], text = "", children = [
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                        new Td("", classlist = ["td"], text = "Hello World"),
+                    ]),
+                ])
+            ]),
