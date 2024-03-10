@@ -35,7 +35,6 @@ class SingleFetch {
                 fetch(url)
                     .then(response => response.json())
                     .then(response => {
-                        // console.log(response)
                         if (Object.keys(response).length > 0) {
                             localStorage.setItem(url, JSON.stringify(response));
                             resolve(JSON.parse(localStorage.getItem(url)))
@@ -45,7 +44,6 @@ class SingleFetch {
             } else {
                 resolve(JSON.parse(localStorage.getItem(url)));
             }
-            // reject("No Idea")
         });
     }
 }
@@ -61,7 +59,6 @@ class Fetch {
     }
     execute() {
         new SingleFetch(this.url).then(url => {
-            // console.log("In the background process : " + this.key)
             let internal_callback = new this.callback({
                 key: this.key, table_data: url,
             });

@@ -239,3 +239,47 @@ thead>tr {
     background-color: #141414 !important;
     color: #fff !important;
 }
+
+form {
+    width: 80%;
+}
+
+input {
+    margin: 8px;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Style the label to display next to the inputs */
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    /* padding: 4px; */
+    left : 100%;
+    border: none;
+    padding: 8px;
+    background: #ff9447;
+    transition: 0.25s;
+    /* border-right : 4px solid #000;
+    border-bottom : 4px solid #000; */
+    /* box-shadow: 16px 16px #743000; */
+}
+
+input[type=submit]:hover {
+
+    box-shadow: 16px 16px #743000;
+}

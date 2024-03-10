@@ -2,6 +2,8 @@
 
 
 ### todo 
-- Forms
-- Notifications
-- additive / modifier fetching
+- [] Forms
+    - [x] UI
+    - [] http request
+- [] Notifications
+- [] additive / modifier fetching

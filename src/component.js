@@ -1,75 +1,3 @@
-class Render {
-    constructor({ key = "", tag = "", classlist = [], options = {}, text = "", children = [], onload = () => { } }) {
-        this.key = key;
-        this.tag = tag;
-        this.classlist = classlist;
-        this.options = options;
-        this.text = text;
-        this.children = children;
-        this.onload = onload;
-    }
-    render() {
-        console.log(this)
-        const new_object = document.createElement(this.tag);
-        new_object.id = this.key;
-        new_object.classList = this.classlist.join(" ");
-        new_object.innerHTML = this.text;
-
-        if (this.options != undefined) {
-            for (let option in this.options) {
-                // console.log(this.options[option])
-                let key = Object.keys(this.options[option]);
-                new_object.setAttribute(key, this.options[option][key])
-            }
-
-        }
-
-
-        try {
-            if (this.children.length > 0) {
-                for (let child of this.children) {
-                    // console.log("Render Children Try / Catch - Key : " + child.key + " Type : " + typeof child)
-                    // console.log(child)
-                    if (child.isNotAComponent) {
-                        child.render().then(c => {
-                            new_object.appendChild(c.render());
-                        })
-                    } else {
-                        new_object.appendChild(child.render());
-                    }
-                }
-            }
-        }
-
-        catch (error) {
-            new_object
-                .appendChild(new Div({
-                    key: "error",
-                    classlist: ["error", "message"],
-                    text: "Error",
-                    children: [
-                        new Ul({
-                            classlist: [],
-                            children: [
-                                new Li({
-                                    classlist: [],
-                                    text: error
-                                })
-                            ]
-                        })
-
-                    ]
-                }).render())
-
-        }
-
-
-        // Rest of your code here
-        return new_object;
-
-    }
-}
-
 
 class Component extends Render {
     constructor(render) {
@@ -194,6 +122,34 @@ class Nav extends Component {
 class Tbody extends Component {
     constructor(component) {
         component.tag = "tbody";
+        super(component);
+    }
+}
+
+class Form extends Component {
+    constructor(component) {
+        component.tag = "form";
+        super(component);
+    }
+}
+
+class Label extends Component {
+    constructor(component) {
+        component.tag = "label";
+        super(component);
+    }
+}
+
+class Input extends Component {
+    constructor(component) {
+        component.tag = "input";
+        super(component);
+    }
+}
+
+class Button extends Component {
+    constructor(component) {
+        component.tag = "button";
         super(component);
     }
 }

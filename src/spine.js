@@ -28,6 +28,7 @@ class Spine {
 
             document.getElementById("app").appendChild(route.tree.render());
         } catch (error) {
+            console.error(error);
             document.getElementById("app").appendChild(new Div({
                 key: "error",
                 classlist: ["error message"],

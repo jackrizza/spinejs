@@ -10,7 +10,6 @@ class NavagationCreator {
                                     key: "title",
                                     classlist: ["titlelink"],
                                     text: "Test Site",
-                                    options: [{ "poop": "#home" }]
                                 })
                             ]
                         }),
@@ -26,7 +25,7 @@ class NavagationCreator {
                                             key: "home",
                                             classlist: ["navlink"],
                                             text: "Home",
-                                            options: [{ "href": "#home" }]
+                                            options: { href: "#home" }
                                         })
                                     ]
                                 }),
@@ -36,7 +35,7 @@ class NavagationCreator {
                                             key: "about",
                                             classlist: ["navlink"],
                                             text: "About",
-                                            options: [{ "href": "#about" }]
+                                            options: { href: "#about" }
                                         })
                                     ]
                                 }),
@@ -46,7 +45,7 @@ class NavagationCreator {
                                             key: "contact",
                                             classlist: ["navlink"],
                                             text: "Contact",
-                                            options: [{ "href": "#contact" }]
+                                            options: { href: "#contact" }
                                         })
                                     ]
                                 })

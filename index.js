@@ -50,6 +50,50 @@ class BaseSpine {
                         new Div({
                             key: "About", classlist: ["card"], children: [
                                 new H1({ classlist: ["h1"], text: "Contact Page" }),
+                                new Form({
+                                    key: makeid(16),
+                                    classlist: ["form"],
+                                    options: {
+                                        action: "/form_submit",
+                                    },
+                                    children: [
+                                        new Input({
+                                            classlist: ["input"],
+                                            options: {
+                                                type: "text",
+                                                placeholder: "Name"
+                                            }
+                                        }),
+                                        new Input({
+                                            classlist: ["input"],
+                                            options: {
+                                                type: "text",
+                                                placeholder: "Email"
+                                            }
+                                        }),
+                                        new Input({
+                                            classlist: ["input"],
+                                            options: {
+                                                type: "text",
+                                                placeholder: "Phone"
+                                            }
+                                        }),
+                                        new Input({
+                                            classlist: ["input"],
+                                            options: {
+                                                type: "text",
+                                                placeholder: "Message"
+                                            }
+                                        }),
+                                        new Input({
+                                            classlist: ["input"],
+                                            options: {
+                                                type: "submit",
+                                                value: "submit form"
+                                            }
+                                        }),
+                                    ]
+                                })
                             ]
                         })
                     ]
