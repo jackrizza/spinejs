@@ -1,15 +1,12 @@
 class TableCreator extends Render {
-    constructor({ key = key, table_data = {} }) { // "table": [["no"], ["data"]] 
+    constructor({ key = "", table_data = {} }) { // "table": [["no"], ["data"]]
         super({})
-        console.log("table data key : " + Object.keys(table_data).length)
-        // console.log("Table Creation")
         this.key = key;
-        console.log(table_data)
         this.table_data = table_data.table;
     }
 
     table_data_does_not_exist() {
-        if (this.table_data === undefined || Object.keys(this.table_data).index == 0) {
+        if (!Array.isArray(this.table_data) || this.table_data.length === 0) {
             return true
         } else {
             return false
@@ -33,30 +30,23 @@ class TableCreator extends Render {
     }
 
     table_header() {
-        console.log("There is no table data : " + this.table_data_does_not_exist());
-        console.log(this)
         if (this.table_data_does_not_exist()) {
             return this.info_message("No table Header");
         }
         const firstColumnData = this.table_data[0].map(row => row);
-        const tdElements = firstColumnData.map(data => new Td({ text: data || "" }));
-        console.log(tdElements)
+        const tdElements = firstColumnData.map(data => new Td({ text: data ?? "" }));
         return new Tr({ children: tdElements });
     }
 
     table_body() {
         if (this.table_data_does_not_exist()) {
-            return this.info_message("No table data");
+            return [this.info_message("No table data")];
         }
-        let interal_table_data = this.table_data;
-        interal_table_data.shift();
+        const internal_table_data = this.table_data.slice(1);
         let rows = []
 
-        for (let index in interal_table_data) {
-            const firstColumnData = this.table_data[index].map(row => row);
-            const tdElements = firstColumnData.map(data => new Td({ text: data || "" }));
-            // console.log(tdElements)
-
+        for (const row of internal_table_data) {
+            const tdElements = row.map(data => new Td({ text: data ?? "" }));
             rows.push(new Tr({ children: tdElements }));
         }
 

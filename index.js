@@ -14,7 +14,7 @@ class BaseSpine {
                             ]
                         })
                     ]
-                }), onload = () => {
+                }), () => {
                     console.log("Home Page Loaded");
                 }),
             },
@@ -38,9 +38,18 @@ class BaseSpine {
                             ]
                         })
                     ]
-                }), onload = () => {
+                }), () => {
                     console.log("About Page Loaded");
                 })
+            },
+            {
+                key: 'counter',
+                tree: new Tree("counter", new Div({
+                    key: "Counter", classlist: ["container"], children: [
+                        new NavagationCreator(),
+                        new CounterExample(state)
+                    ]
+                }))
             },
             {
                 key: 'contact',
@@ -97,7 +106,7 @@ class BaseSpine {
                             ]
                         })
                     ]
-                }), onload = () => {
+                }), () => {
                     console.log("About Page Loaded");
                 })
             }]))

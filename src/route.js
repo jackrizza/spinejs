@@ -1,5 +1,5 @@
 class Tree {
-    constructor(key, component, onload = {}) {
+    constructor(key, component, onload = () => {}) {
         // Add properties and methods for the Route object here
         this.key = key;
         this.forward = null;
@@ -10,5 +10,9 @@ class Tree {
 
     render() {
         return this.component.render();
+    }
+
+    dispose() {
+        this.component.dispose();
     }
 }

@@ -40,6 +40,15 @@ class NavagationCreator {
                                     ]
                                 }),
                                 new Li({
+                                    classlist: ["navitem"], children: [
+                                        new A({
+                                            classlist: ["navlink"],
+                                            text: "Counter",
+                                            options: { href: "#counter" }
+                                        })
+                                    ]
+                                }),
+                                new Li({
                                     key: "contact", classlist: ["navitem"], children: [
                                         new A({
                                             key: "contact",
