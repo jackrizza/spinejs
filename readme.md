@@ -11,9 +11,9 @@ npm ci
 npm run dev
 ```
 
-Open [the file browser](http://127.0.0.1:8080/Example/#/files/) or [the counter](http://127.0.0.1:8080/Example/#counter). Home, about, and contact remain available; about fetches the local sample table data. The standalone file browser uses in-memory fixtures and needs no backend. It demonstrates nested folders, sorting, uploads, new folders, previews, and request states. Consumers own their application UI and adapters independently; see [using Spine in your application](docs/using-spine.md).
+Open [the home page](http://127.0.0.1:8080/), [the file browser](http://127.0.0.1:8080/#/files/), or [the counter](http://127.0.0.1:8080/#counter). Home, about, and contact remain available; about fetches the local sample table data. The standalone file browser uses in-memory fixtures and needs no backend. It demonstrates nested folders, sorting, uploads, new folders, previews, and request states. Consumers own their application UI and adapters independently; see [using Spine in your application](docs/using-spine.md).
 
-All demo HTML, application scripts, styles, and fixtures live in `Example/`. The development server serves the repository with caching disabled so `Example/index.html` can load the framework directly from `../src/`. Open `/Example/` to run the demo. Save changes and refresh manually; there is no automatic reload or build step. Stop with Ctrl+C. Choose another port with `npm run dev -- -p 8001`.
+All demo HTML, application scripts, styles, and fixtures live in `Example/`. The development server serves that demo at `/` with caching disabled and makes the framework sources available at `/src/`. Existing `/Example/` links also work. Save changes and refresh manually; there is no automatic reload or build step. Stop with Ctrl+C. Choose another port with `npm run dev -- -p 8001`.
 
 Type into the counter input, then increase or reset the count. Both views update while the input and its typed value stay intact. Clicking naturally focuses the clicked button; check state-driven focus preservation by focusing the input and calling `state.set("count", 5)` in the browser console. Navigation away and back exercises disposal and fresh subscriptions.
 

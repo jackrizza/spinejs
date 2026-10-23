@@ -19,7 +19,7 @@
     "./spine.min.js.map": "./dist/spine.min.js.map"
   },
   "scripts": {
-    "dev": "http-server . -a 127.0.0.1 -c-1",
+    "dev": "node scripts/dev.cjs",
     "build": "node scripts/build.cjs",
     "build:framework": "node scripts/build.cjs --framework",
     "prepack": "npm run build:framework",
