@@ -63,7 +63,7 @@ npm pack --dry-run
 npm pack
 ```
 
-The framework-only build creates `dist/spine.js`, `dist/spine.min.js`, and its source map without building the demo application. Prepack runs this build. The package includes those framework artifacts, package metadata, and README documentation; its allowlist excludes example applications and fixtures even after a full demo build. Version 0.1.0 packs as `spinejs-0.1.0.tgz`; this does not publish a package to a registry.
+The framework-only build creates `dist/spine.js`, `dist/spine.min.js`, and its source map without building the demo application. Prepack runs this build. The package includes those framework artifacts, package metadata, and README documentation; its allowlist excludes example applications and fixtures even after a full demo build. Version 0.0.1 packs as `spinejs-0.0.1.tgz`; this does not publish a package to a registry.
 
 Consumers may install an explicit release tarball or vendor the framework bundles into their own asset pipeline. Browser artifact export subpaths are `spinejs/spine.js`, `spinejs/spine.min.js`, and `spinejs/spine.min.js.map`. These identify classic browser scripts, not a CommonJS require API or ES module exports. Load the selected framework before your own application script.
 
@@ -79,8 +79,8 @@ and the readable `spine.js`. Example application assets are excluded.
 Commit and push the source and workflow first, then tag that commit:
 
 ```sh
-git tag -a v0.1.0 -m "SpineJS v0.1.0"
-git push origin v0.1.0
+git tag -a v0.0.1 -m "SpineJS v0.0.1"
+git push origin v0.0.1
 ```
 
 Use a new version tag for each release; update `package.json` to match the version

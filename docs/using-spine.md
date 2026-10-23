@@ -24,7 +24,7 @@ app bundles, HTML, styles, fixtures, and backend adapters. A full `npm run build
 also builds Spine's own examples for development/preview; those example assets
 are not part of the reusable package.
 
-The local package version is 0.1.0; packing creates `spinejs-0.1.0.tgz`. Packing
+The local package version is 0.0.1; packing creates `spinejs-0.0.1.tgz`. Packing
 locally does not publish to an npm registry. Distribute that tarball through your
 normal artifact/release process. No script copies artifacts into another
 repository, and no other checkout or backend is needed to build or pack Spine.
@@ -34,7 +34,7 @@ repository, and no other checkout or backend is needed to build or pack Spine.
 A consumer can install an explicit tarball, for example:
 
 ```sh
-npm install /path/to/releases/spinejs-0.1.0.tgz
+npm install /path/to/releases/spinejs-0.0.1.tgz
 ```
 
 Alternatively, extract the release artifact and vendor the framework bundle and
