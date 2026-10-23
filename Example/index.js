@@ -1,5 +1,6 @@
 class BaseSpine {
     constructor() {
+        const files = new FileBrowser();
 
         return new Promise((resolve, reject) => {
             return resolve(new Spine([{
@@ -31,7 +32,7 @@ class BaseSpine {
                                     text: "About Page"
                                 }),
                                 new Fetch({
-                                    url: "/src/example_table.json",
+                                    url: "./example_table.json",
                                     runtime: "slow",
                                     callback: TableCreator
                                 })
@@ -50,6 +51,13 @@ class BaseSpine {
                         new CounterExample(state)
                     ]
                 }))
+            },
+            {
+                key: '/files/*path',
+                tree: new Tree("files", new Div({
+                    classlist: ["container"], children: [new NavagationCreator(), files]
+                })),
+                update: context => files.navigate(context.params.path || '', { signal: context.signal })
             },
             {
                 key: 'contact',

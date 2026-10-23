@@ -57,6 +57,11 @@ class NavagationCreator {
                                             options: { href: "#contact" }
                                         })
                                     ]
+                                }),
+                                new Li({
+                                    classlist: ["navitem"], children: [
+                                        new A({ classlist: ["navlink"], text: "Files", options: { href: "#/files/" } })
+                                    ]
                                 })
                             ]
                         })

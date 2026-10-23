@@ -267,6 +267,11 @@ label {
 }
 
 /* Style the submit button */
+button {
+    margin : 4px 12px;
+}
+
+button,
 input[type=submit] {
     /* padding: 4px; */
     left : 100%;
@@ -279,6 +284,7 @@ input[type=submit] {
     /* box-shadow: 16px 16px #743000; */
 }
 
+button:hover,
 input[type=submit]:hover {
 
     box-shadow: 16px 16px #743000;

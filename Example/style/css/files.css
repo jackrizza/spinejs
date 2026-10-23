@@ -1,0 +1,237 @@
+/* Match the example cards and navigation without changing other routes. */
+.files-browser {
+    display: flow-root;
+    width: 90%;
+    max-width: calc(100% - 64px);
+    min-height: 400px;
+    margin: 32px;
+    padding: 32px;
+    color: #000;
+    background: #fff;
+    box-shadow: 32px 32px #000;
+}
+
+.files-browser h1 {
+    color: #000;
+}
+
+.files-toolbar,
+.files-browser form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    margin: 24px 0;
+}
+
+.files-toolbar p {
+    flex-basis: 100%;
+    margin: 8px 0 0;
+    padding: 12px 16px;
+    border-left: 4px solid #ff9447;
+    background: #f2f2f2;
+    font-family: monospace;
+    overflow-wrap: anywhere;
+}
+
+.files-browser button,
+.files-browser input {
+    margin: 0;
+    padding: 12px 16px;
+    border-radius: 0;
+    font: inherit;
+}
+
+.files-browser input:not([type=hidden]) {
+    flex: 1 1 14rem;
+    width: auto;
+    min-width: 0;
+    max-width: 24rem;
+    border: 1px solid #181818;
+    color: #000;
+    background: #fff;
+}
+
+.files-browser input::placeholder {
+    color: #595959;
+}
+
+.files-browser button {
+    border: 0;
+    color: #000;
+    background: #ff9447;
+    cursor: pointer;
+}
+
+.files-browser button:hover:not(:disabled) {
+    background: #ffa667;
+    box-shadow: 16px 16px #743000;
+}
+
+.files-browser button:disabled {
+    opacity: .5;
+    box-shadow: none;
+    cursor: wait;
+}
+
+.files-browser a {
+    color: #000;
+    text-underline-offset: 3px;
+}
+
+.files-browser a:hover {
+    color: #7c2500;
+}
+
+.files-toolbar > a {
+    display: inline-block;
+    padding: 12px 16px;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.files-toolbar > a:hover {
+    background: #ffa667;
+    box-shadow: 16px 16px #000;
+}
+
+.files-browser :focus-visible {
+    outline: 3px solid #7c2500;
+    outline-offset: 4px;
+}
+
+/* Override the shared table spacing so the table stays inside its card. */
+.files-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.files-table caption {
+    padding: 16px 0;
+    text-align: left;
+    font-weight: bold;
+}
+
+.files-table th,
+.files-table td {
+    padding: 16px 24px !important;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+.files-table th {
+    color: #fff;
+    background: #141414;
+}
+
+.files-table th:first-child {
+    width: 46%;
+}
+
+.files-table th button {
+    padding: 8px 12px;
+}
+
+.files-table tbody tr:hover {
+    background: #fff0e5;
+}
+
+.files-preview {
+    margin: 32px 0 0;
+    padding: 24px;
+    border: 2px solid #181818;
+    box-shadow: 8px 8px #000;
+}
+
+.files-preview h2 {
+    margin-bottom: 16px;
+    overflow-wrap: anywhere;
+}
+
+.files-preview img,
+.files-preview video {
+    display: block;
+    max-width: 100%;
+    max-height: 32rem;
+    margin: 24px 0;
+}
+
+.files-preview iframe {
+    display: block;
+    width: 100%;
+    min-height: 30rem;
+    margin: 24px 0;
+    border: 0;
+}
+
+.files-preview pre {
+    overflow: auto;
+    margin-top: 24px;
+    padding: 16px;
+    color: #000;
+    background: #f2f2f2;
+}
+
+.files-preview [data-download] {
+    display: inline-block;
+    margin-top: 16px;
+}
+
+.files-browser [role=alert] {
+    margin: 24px 0;
+    padding: 16px;
+    border: 2px solid #8d1919;
+    color: #a50000;
+    background: #ff8787;
+    box-shadow: 8px 8px #a50000;
+}
+
+@media (max-width: 40rem) {
+    .files-browser {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin: 16px;
+        padding: 16px;
+        box-shadow: 12px 12px #000;
+    }
+
+    .files-toolbar,
+    .files-browser form {
+        gap: 12px;
+    }
+
+    .files-browser form label {
+        flex-basis: 100%;
+        padding: 0;
+    }
+
+    .files-browser input:not([type=hidden]) {
+        max-width: 100%;
+    }
+
+    .files-table th,
+    .files-table td {
+        padding: 12px 8px !important;
+        font-size: 14px;
+    }
+
+    .files-table th button {
+        padding: 8px;
+    }
+
+    .files-table th:first-child {
+        width: 40%;
+    }
+
+    .files-table th:nth-child(2) {
+        width: 32%;
+    }
+
+    .files-preview {
+        padding: 16px;
+    }
+}
